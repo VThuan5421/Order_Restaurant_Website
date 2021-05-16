@@ -1,0 +1,307 @@
+:root {
+    --main-color: #e25111;
+    --body-bg: #181616;
+    --text-color: #fff;
+    --nav-height: 50px;
+    --space-top: 30px;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: "Cario", sans-serif;
+    /*padding-top: var(--nav-height);*/
+    /*background-color: var(--body-bg);*/
+}
+a {text-decoration: none; color: unset}
+a:hover {
+    text-decoration: none;
+}
+li {list-style-type: none;}
+/* top bar */
+/*
+.content-top {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    margin: 0px 10px;
+}
+.left, .right {
+    padding: 5px 0;
+}
+.right i {margin-right: 5px;}
+.topbar {
+    background-color: var(--body-bg);
+    padding: 0 50px;
+    margin: auto;
+    display: none;
+}
+*/
+/* nav bar */
+.main-color {color: var(--main-color);}
+.nav-wrapper {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    background-color: #000000;
+    padding: 0 40px;
+    margin: auto;
+}
+.logo {font-size: 2rem; font-weight: 900; margin-top: -15px;}
+.logo i {  color: #e25111;}
+.nav a:hover {text-decoration: none}
+.responsive { display: flex;}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(-text-color);
+    height: var(--nav-height);
+}
+.nav a {color: var(--text-color);}
+.nav-menu {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 0 0px;
+    margin-top: 10px;
+}
+.nav-menu li ~ li {margin-left: 30px;}
+.nav-menu a {
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.nav-menu a:hover {
+    color: var(--main-color);
+    transition: 0.3s ease;
+    text-decoration: none;
+}
+
+.btn {
+    color: #fff;
+    padding: .25rem 1.5rem;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+}
+/* for login successfully */
+.show-user {color: #e25111;}
+/* close this */
+/* for profile signin */
+.nav-menu .profile1:hover {
+    background-color: rgba(212, 206, 206, 0.99);
+    transition: 0.3s ease;
+}
+.nav-menu .btn:hover {
+    color: #fff;
+}
+.btn-hover::before {
+    z-index: 1;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #e25111;
+    transition: 0.3s ease-in-out;
+}
+.btn-hover:hover::before {
+    width: 100%;
+}
+.btn i, .btn span {z-index: 1;}
+.btn i {margin-right: 1rem;}
+/* Move top scroll fixed */
+/*not use
+#navbar-top {
+    overflow: hidden;
+}
+.sticky {
+    width: 100%;
+    top: 0;
+    position: fixed;
+}
+*/
+.hamburger-menu {
+    --size: 30px;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    display: none;
+    align-items:center;
+    margin-top: 12px;
+}
+.hamburger-menu {
+    --size: 30px;
+    height: var(--size);
+    width: var(--size);
+    cursor: pointer;
+    z-index: 101;
+    position: relative;
+    display: none;
+    align-items: center;
+    margin-top: -2px;
+}
+.hamburger {
+    position: relative;
+    padding-right: 10px;
+}
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    width: var(--size);
+    height: 3px;
+    border-radius: 0.5rem;
+    background-color: var(--text-color);
+    transition: 0.4s;
+}
+.hamburger::before,
+.hamburger::after {
+    content: "";
+    position: absolute;
+    left: 0;
+}
+.hamburger::before {
+    top: -10px;
+}
+.hamburger::after {
+    bottom: -10px;
+}
+.hamburger-menu.active .hamburger {
+    background-color: transparent;
+}
+.hamburger-menu.active .hamburger::before {
+    transform-origin: bottom left;
+    transform: rotate(45deg);
+    left: 6px;
+}
+.hamburger-menu.active .hamburger::after {
+    transform-origin: bottom left;
+    transform: rotate(-45deg);
+    left: 6px;
+}
+/* Item */
+.card .remove {
+    color: #e25111;
+    text-transform: uppercase;
+}
+.card-body input[type = "number"] {
+    border: 1px solid #e25111;
+    text-align: center;
+    border-radius: 10px;
+}
+.card-body input[type = "text"] {
+    border-radius: 5px;
+}
+.card-body input[type = "number"]:focus {
+    outline-width: 0;
+}
+
+.card-body input[type = "submit"] {
+    text-transform: uppercase;
+    background-color: grey;
+    padding: 2% 5%;
+    color: white;
+    border-color: transparent;
+}
+.card .remove:hover {color: black;}
+.first, .second, .third {
+    width: 40%; 
+    margin-left: 30%;
+}
+/* FOOTER */
+.footer {
+    margin-bottom: 5px;
+    position: absolute;
+    width: 100%;
+    font-size: 15px;
+    /*background-color: var(--body-bg);*/
+}
+.footer a:hover {
+    color: var(--main-color);
+}
+.footer a.logo:hover {
+    color: unset;
+}
+.footer a.logo {
+    margin-top: -1.5rem;
+    display: block;
+}
+.footer-menu {
+    list-style-type: none;
+}
+.footer-menu a {
+    display: inline-block;
+    transition: transform .2s ease-in-out;
+}
+.footer-menu a:hover {
+    transform: translateX(5px);
+}
+.footer-menu img {
+    width: 150px;
+    height: 50px;
+}
+.footer .content {
+    margin-top: 10px;
+}
+.social-item {
+    padding: 2% 3%;
+    border: 1px solid transparent;
+    padding: 2% 2.2%;
+    margin-left: 2%;
+    border-radius: 100%;
+    background-color: rgb(49, 48, 48);
+}
+.social-item:hover {
+    color: white;
+    background-color:blue;
+}
+.icon-head {
+    text-align: right;
+    margin-top: 0px;
+}
+
+/*responsive */
+@media only screen and (max-width: 850px) {
+    html {font-size: 14px;}
+    /*nav bar */
+    .hamburger-menu {
+        display: grid;
+    }
+    .nav-menu {
+        /*display: none; */
+        position: absolute;
+        top: 35px;
+        left: -100%;
+        background-color: #000000;
+        flex-direction: column;
+        width: 80%;
+        height: 100vh;
+        padding: 20px;
+        transition: 0.3s ease-in-out;
+    }
+    .nav-menu li {
+        margin: 10px 30px;
+    }
+    .nav-menu.active {
+        left: 0;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .footer .content {margin-left: 10px;}
+    .footer-menu {margin-left: 10px;}
+}
